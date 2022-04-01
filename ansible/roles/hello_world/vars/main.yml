@@ -1,4 +1,1 @@
 ---
-- hosts: localhost
-  roles:
-  - { role: hello_world, become: true }
