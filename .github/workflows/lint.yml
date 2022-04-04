@@ -14,6 +14,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run yamllint
-        uses: dsz182/yamllint@v7
+        uses: dsz182/yamllint@v0.1.0
         with:
           path: "ansible"
