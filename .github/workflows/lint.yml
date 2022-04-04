@@ -12,5 +12,3 @@ jobs:
         with:
           molecule_options: set -e yamllint . ansible-lint .
           molecule_command: lint
-        env:
-          ANSIBLE_FORCE_COLOR: '1'
