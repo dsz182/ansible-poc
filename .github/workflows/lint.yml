@@ -2,13 +2,15 @@ name: Static Code Analysis
 on: [push, pull_request]
 
 jobs:
-  build:
+  ansible-lint:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Molecule Lint
-        uses: gofrolist/molecule-action@v2
-        with:
-          molecule_args: set -e yamllint . ansible-lint .
-          molecule_command: lint
+      - uses: actions/checkout@v2
+      - name: Run ansible-lint
+        uses: ansible-community/ansible-lint-action@v6.0.2
+   yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run yamllint
+        uses: frenck/action-yamllint@v1.1.2
