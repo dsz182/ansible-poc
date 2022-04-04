@@ -15,3 +15,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run yamllint
         uses: frenck/action-yamllint@v1.1.2
+        with:
+          path: "ansible"
