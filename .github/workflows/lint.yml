@@ -10,5 +10,5 @@ jobs:
       - name: Molecule Lint
         uses: gofrolist/molecule-action@v2
         with:
-          molecule_options: set -e yamllint . ansible-lint .
+          molecule_args: set -e yamllint . ansible-lint .
           molecule_command: lint
