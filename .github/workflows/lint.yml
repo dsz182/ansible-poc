@@ -4,7 +4,12 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run ansible-lint
-        uses: ansible-community/ansible-lint-action@v6.0.2
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Molecule Lint
+        uses: gofrolist/molecule-action@v2
+        with:
+          molecule_options: set -e yamllint . ansible-lint .
+          molecule_command: lint
+        env:
+          ANSIBLE_FORCE_COLOR: '1'
