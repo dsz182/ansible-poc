@@ -1,3 +1,4 @@
+---
 name: Static Code Analysis
 on: [push, pull_request]
 
@@ -8,9 +9,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: Run ansible-lint
         uses: ansible-community/ansible-lint-action@v6.0.2
-   yamllint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - name: Run yamllint
-        uses: frenck/action-yamllint@v1.1.2
+  yamllint:
+  runs-on: ubuntu-latest
+  steps:
+    - uses: actions/checkout@v2
+    - name: Run yamllint
+      uses: frenck/action-yamllint@v1.1.2
